@@ -23,6 +23,8 @@ client.on('message', msg => {
     const message = msg
     var money = 0
     var toggle = 0
+    const ch = client.channels.cache.get(channelID)
+    const channel = client.channels.cache.get(channelID)
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
     try{
@@ -54,7 +56,7 @@ client.on('message', msg => {
      catch{
        //e
      }
-    const ch = client.channels.cache.get(channelID)
+    
     var content = msg.content
     if (message.author.id === "270904126974590976") {
         if (message.content.includes("is broken lmao")) {
