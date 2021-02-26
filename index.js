@@ -90,6 +90,7 @@ function hunting(){
 }
 
 function startbot() {
+            toggle = 1
             const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
             channel.send("H")
