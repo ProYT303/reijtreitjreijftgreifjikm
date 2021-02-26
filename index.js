@@ -22,6 +22,7 @@ client.on('ready', () => {
 // functions
 
 function sellthing(){
+
     setTimeout(() => {
         if (toggle == 1){
             ch.startTyping()
@@ -89,6 +90,8 @@ function hunting(){
 }
 
 function startbot() {
+            const channel = client.channels.cache.get(channelID)
+            const ch = client.channels.cache.get(channelID)
             channel.send("H")
             channel.startTyping();
             var toggle = 1
