@@ -8,13 +8,118 @@ const { count } = require('console');
 const Discord = require('discord.js-self');
 const { waitForDebugger } = require('inspector');
 const client = new Discord.Client();
-const { channelID, token, owner, postmemes, beg, fish, hunt, prefix, hl } = require('./config.json')
+const { channelID, token, owner, postmemes, beg, fish, hunt, prefix, hl, autoturnon } = require('./config.json')
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}! \n Welcome to PogMemer SelfBot v2.2, ${client.user.tag}!`);
-  
-   
-
+    console.log(`Logged in as ${client.user.tag}! \n Welcome to PogMemer SelfBot v2.3, ${client.user.tag}!`);
+    const ch = client.channels.cache.get(channelID)
+    const channel = client.channels.cache.get(channelID)
+    if(autoturnon === "true"){
+        startbot()
+    }
 });
+
+
+// functions
+
+function sellthing(){
+    setTimeout(() => {
+        if (toggle == 1){
+            ch.startTyping()
+            setTimeout(() => {
+                send('pls dep max')    
+            }, 1000);
+            setTimeout(() => {
+                send('pls sell fish max')    
+            }, 2000);
+            
+        }
+    }, 500);
+}
+function begs(){
+    if(toggle ==1){
+    channel.startTyping();
+    console.log('Typing.')
+    setTimeout(() => {
+        send("pls beg");
+        console.log("begged")
+        times++
+    channel.stopTyping();
+    }, 500)
+}
+}
+function pm(){
+    if(toggle == 1){
+    channel.startTyping();
+                console.log('Typing.')
+                setTimeout(() => {
+                    send("pls pm");
+                    channel.stopTyping();
+                    channel.startTyping();
+                    setTimeout(function() {
+                        send("f")
+                        console.log("posted a fresh meme")
+                        times++
+                        channel.stopTyping();
+                    }, 1969);
+                }, 600)
+            }
+}
+function fishing(){
+    if (toggle === 1) {
+    times++
+    channel.startTyping();
+    console.log('Typing.')
+    setTimeout(()=>{
+        send("pls fish");
+        channel.stopTyping();
+    }, 300)
+}
+}
+function hunting(){
+    if(toggle===1) {
+    channel.startTyping();
+    console.log('Typing.')
+    setTimeout(() => {
+        send("pls hunt");
+        console.log("hunted")
+        times++
+    }, 600)
+    channel.stopTyping();
+}
+}
+
+function startbot() {
+            channel.send("H")
+            channel.startTyping();
+            var toggle = 1
+            var sellingthings = setInterval(sellthing, 100000);
+            if(beg === "true") {
+                var begvar = setInterval(begs, 46000)
+            }
+            if(postmemes === "true") {
+                var pmvar = setInterval(pm, 61939)
+            }
+            if(fish === "true") {
+                var fishvar = setInterval(fishing, 70000)
+            }
+            if(hunt === "true") {
+                var huntvar = setInterval(hunting, 68000)
+            }
+            if (hl === "true") {
+                setInterval(()=>{
+                    ch.startTyping()
+                    setTimeout(() => {
+                        send('pls hl')
+                        ch.stopTyping()    
+                    }, 1200);
+                    
+                    times++
+                }, 24312)
+            }
+}
+
+
+
 function send(message) {
     client.channels.cache.get(channelID).send(message)
 }
@@ -23,8 +128,7 @@ client.on('message', msg => {
     const message = msg
     var money = 0
     var toggle = 0
-    const ch = client.channels.cache.get(channelID)
-    const channel = client.channels.cache.get(channelID)
+    
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
     try{
@@ -93,104 +197,11 @@ client.on('message', msg => {
         }
         else {return;}
     }
-    function sellthing(){
-        setTimeout(() => {
-            if (toggle == 1){
-                ch.startTyping()
-                setTimeout(() => {
-                    send('pls dep max')    
-                }, 1000);
-                setTimeout(() => {
-                    send('pls sell fish max')    
-                }, 2000);
-                
-            }
-        }, 500);
-    }
-    function begs(){
-        if(toggle ==1){
-        channel.startTyping();
-        console.log('Typing.')
-        setTimeout(() => {
-            send("pls beg");
-            console.log("begged")
-            times++
-        channel.stopTyping();
-        }, 500)
-    }
-    }
-    function pm(){
-        if(toggle == 1){
-        channel.startTyping();
-                    console.log('Typing.')
-                    setTimeout(() => {
-                        send("pls pm");
-                        channel.stopTyping();
-                        channel.startTyping();
-                        setTimeout(function() {
-                            send("f")
-                            console.log("posted a fresh meme")
-                            times++
-                            channel.stopTyping();
-                        }, 1969);
-                    }, 600)
-                }
-    }
-    function fishing(){
-        if (toggle === 1) {
-        times++
-        channel.startTyping();
-        console.log('Typing.')
-        setTimeout(()=>{
-            send("pls fish");
-            channel.stopTyping();
-        }, 300)
-    }
-    }
-    function hunting(){
-        if(toggle===1) {
-        channel.startTyping();
-        console.log('Typing.')
-        setTimeout(() => {
-            send("pls hunt");
-            console.log("hunted")
-            times++
-        }, 600)
-        channel.stopTyping();
-    }
-    }
+    
     if (msg.content === `${prefix}st`) {
         if(msg.author.id === owner | msg.author.id === client.user.id) {
             msg.delete()
-            channel.send("H")
-            channel.startTyping();
-            var toggle = 1
-            var sellingthings = setInterval(sellthing, 100000);
-            if(beg === "true") {
-                var begvar = setInterval(begs, 46000)
-            }
-            if(postmemes === "true") {
-                var pmvar = setInterval(pm, 61939)
-            }
-            if(fish === "true") {
-                var fishvar = setInterval(fishing, 70000)
-            }
-            if(hunt === "true") {
-                var huntvar = setInterval(hunting, 68000)
-            }
-            if (hl === "true") {
-                setInterval(()=>{
-                    ch.startTyping()
-                    setTimeout(() => {
-                        send('pls hl')
-                        ch.stopTyping()    
-                    }, 1200);
-                    
-                    times++
-                }, 24312)
-            }
-            
-            
+            startbot()
         }
     } 
     else if(msg.content === '+stop') {
@@ -223,7 +234,7 @@ client.on('message', msg => {
         }
     }
     else if (msg.content === `${prefix}version`) {
-        msg.reply('v2.2 69 Man').then(msg => {
+        msg.reply('v2.3 Revision 154').then(msg => {
             setTimeout(     
                 () => {
                     msg.delete()
