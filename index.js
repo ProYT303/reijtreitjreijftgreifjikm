@@ -23,7 +23,7 @@ client.on('ready', () => {
 
 function sellthing(){
     let user = client.users.fetch('270904126974590976')
-    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
+    
 
     const channel = client.channels.cache.get(channelID)
     const ch = client.channels.cache.get(channelID)
@@ -39,7 +39,7 @@ function sellthing(){
 }
 function begs(){
     let user = client.users.fetch('270904126974590976')
-    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
+    
   const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
@@ -53,7 +53,7 @@ function begs(){
 }
 function pm(){
     let user = client.users.fetch('270904126974590976')
-    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
+    
     const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
@@ -72,7 +72,7 @@ function pm(){
             }
 function fishing(){
     let user = client.users.fetch('270904126974590976')
-    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
+    
     const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
         
@@ -87,7 +87,7 @@ function fishing(){
 }
 function hunting(){
     let user = client.users.fetch('270904126974590976')
-    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
+    
 const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
