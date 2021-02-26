@@ -24,7 +24,6 @@ client.on('ready', () => {
 function sellthing(){
 
     setTimeout(() => {
-        if (toggle == 1){
             ch.startTyping()
             setTimeout(() => {
                 send('pls dep max')    
@@ -32,12 +31,9 @@ function sellthing(){
             setTimeout(() => {
                 send('pls sell fish max')    
             }, 2000);
-            
-        }
     }, 500);
 }
 function begs(){
-    if(toggle ==1){
     channel.startTyping();
     console.log('Typing.')
     setTimeout(() => {
@@ -47,9 +43,8 @@ function begs(){
     channel.stopTyping();
     }, 500)
 }
-}
 function pm(){
-    if(toggle == 1){
+    
     channel.startTyping();
                 console.log('Typing.')
                 setTimeout(() => {
@@ -64,9 +59,8 @@ function pm(){
                     }, 1969);
                 }, 600)
             }
-}
 function fishing(){
-    if (toggle === 1) {
+    
     times++
     channel.startTyping();
     console.log('Typing.')
@@ -74,10 +68,10 @@ function fishing(){
         send("pls fish");
         channel.stopTyping();
     }, 300)
-}
+
 }
 function hunting(){
-    if(toggle===1) {
+    
     channel.startTyping();
     console.log('Typing.')
     setTimeout(() => {
@@ -87,10 +81,9 @@ function hunting(){
     }, 600)
     channel.stopTyping();
 }
-}
+
 
 function startbot() {
-            toggle = 1
             const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
             channel.send("H")
