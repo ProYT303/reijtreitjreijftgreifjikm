@@ -22,8 +22,8 @@ client.on('ready', () => {
 // functions
 
 function sellthing(){
-    let user = message.guild.cache.get('270904126974590976');
-    if(user.presence.status === "offline") return;
+    let user = client.users.fetch('270904126974590976')
+    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
 
     const channel = client.channels.cache.get(channelID)
     const ch = client.channels.cache.get(channelID)
@@ -38,8 +38,8 @@ function sellthing(){
     }, 500);
 }
 function begs(){
-    let user = message.guild.cache.get('270904126974590976');
-    if(user.presence.status === "offline") return;
+    let user = client.users.fetch('270904126974590976')
+    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
   const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
@@ -48,12 +48,12 @@ function begs(){
         send("pls beg");
         console.log("begged")
         times++
-    channel.stopTyping();
+    channel.stopTyping(); // 
     }, 500)
 }
 function pm(){
-    let user = message.guild.cache.get('270904126974590976');
-    if(user.presence.status === "offline") return;
+    let user = client.users.fetch('270904126974590976')
+    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
     const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
@@ -71,10 +71,11 @@ function pm(){
                 }, 600)
             }
 function fishing(){
-    let user = message.guild.cache.get('270904126974590976');
-    if(user.presence.status === "offline") return;
+    let user = client.users.fetch('270904126974590976')
+    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
     const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
+        
     times++
     channel.startTyping();
     console.log('Typing.')
@@ -85,8 +86,8 @@ function fishing(){
 
 }
 function hunting(){
-    let user = message.guild.cache.get('270904126974590976');
-    if(user.presence.status === "offline") return;
+    let user = client.users.fetch('270904126974590976')
+    if(user.presence.status === "offline") return console.log("Dank Memer is offline...");
 const channel = client.channels.cache.get(channelID)
             const ch = client.channels.cache.get(channelID)
     channel.startTyping();
