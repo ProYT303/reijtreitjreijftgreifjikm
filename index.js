@@ -22,7 +22,11 @@ client.on('ready', () => {
 // functions
 
 function sellthing(){
+    let user = message.guild.cache.get('270904126974590976');
+    if(user.presence.status === "offline") return;
 
+    const channel = client.channels.cache.get(channelID)
+    const ch = client.channels.cache.get(channelID)
     setTimeout(() => {
             ch.startTyping()
             setTimeout(() => {
@@ -34,6 +38,10 @@ function sellthing(){
     }, 500);
 }
 function begs(){
+    let user = message.guild.cache.get('270904126974590976');
+    if(user.presence.status === "offline") return;
+  const channel = client.channels.cache.get(channelID)
+            const ch = client.channels.cache.get(channelID)
     channel.startTyping();
     console.log('Typing.')
     setTimeout(() => {
@@ -44,7 +52,10 @@ function begs(){
     }, 500)
 }
 function pm(){
-    
+    let user = message.guild.cache.get('270904126974590976');
+    if(user.presence.status === "offline") return;
+    const channel = client.channels.cache.get(channelID)
+            const ch = client.channels.cache.get(channelID)
     channel.startTyping();
                 console.log('Typing.')
                 setTimeout(() => {
@@ -60,7 +71,10 @@ function pm(){
                 }, 600)
             }
 function fishing(){
-    
+    let user = message.guild.cache.get('270904126974590976');
+    if(user.presence.status === "offline") return;
+    const channel = client.channels.cache.get(channelID)
+            const ch = client.channels.cache.get(channelID)
     times++
     channel.startTyping();
     console.log('Typing.')
@@ -71,7 +85,10 @@ function fishing(){
 
 }
 function hunting(){
-    
+    let user = message.guild.cache.get('270904126974590976');
+    if(user.presence.status === "offline") return;
+const channel = client.channels.cache.get(channelID)
+            const ch = client.channels.cache.get(channelID)
     channel.startTyping();
     console.log('Typing.')
     setTimeout(() => {
