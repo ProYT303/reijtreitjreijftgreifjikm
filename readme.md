@@ -1,5 +1,7 @@
-## pog
-# REPL.IT Installation. Repl is very recommended in this project.
+# READ.
+# I don't give a single fuck if you have been banned because of this. Selfbots are against Discord's ToS.
+
+## REPL.IT Installation. Repl is very recommended in this project.
 
 
 # tip : open this on tha shell
