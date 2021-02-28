@@ -1,5 +1,5 @@
 # READ.
-# I don't give a single fuck if you have been banned because of this. Selfbots are against Discord's ToS.
+# I don't give a fuck if you have been banned because of this (except blacklisted from Dank Memer). Selfbots are against Discord's ToS.
 
 ## REPL.IT Installation. Repl is very recommended in this project.
 
